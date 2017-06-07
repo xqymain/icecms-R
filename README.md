@@ -22,6 +22,6 @@ Before and after the user name and password are admin 123456, if you need to mod
 Known BUG: the background may not be able to log in (does not affect the use) <br />
 If any other bug can be submitted lssues, welcome harassment! <br />
 <br />
-Email:201330010330@hnu.edu.cn
-My Web:https://yxom.6b7.net
-YTech & Home of Yanzhou!
+Email:201330010330@hnu.edu.cn <br />
+My Web:https://yxom.6b7.net <br />
+YTech & Home of Yanzhou! <br />
