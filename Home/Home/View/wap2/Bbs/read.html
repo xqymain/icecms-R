@@ -1,0 +1,139 @@
+<extend name="./Public/body"/>
+<block name="title">
+<title><{$title}></title>
+<style>
+	form {
+		margin: 0;
+			}
+	textarea {
+		display: block;
+			}
+</style>
+<link rel="stylesheet" href="__PUBLIC__/editor/themes/default/default.css" />
+<script charset="utf-8" src="__PUBLIC__/editor/kindeditor-min.js"></script>
+<script charset="utf-8" src="__PUBLIC__/editor/lang/zh_CN.js"></script>
+<script>
+	var editor;
+	KindEditor.ready(function(K) {
+	editor = K.create('textarea[name="content"]', {
+		 width : '100%',
+		resizeType : 1,
+		allowPreviewEmoticons : false,
+		allowImageUpload : true,
+		afterBlur: function () { this.sync(); },
+		items : [
+			 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+			'removeformat',  '|', 'emoticons', 'image', 'link','insertfile','code','source']
+		});			
+	});
+		</script>
+		<script type="text/javascript">
+			/*
+$(function (){
+document.getElementById("submit").onclick=function (){ 
+  $.ajax({
+	  url:'__URL__/add_respond',
+	  type:'POST',
+	  dataType:'json',
+	  data:{'content':$("#content").val(),'id':$("#post_id").val()},
+	   })
+	   .done(function (data){
+		   $("#result").html(data.content);
+		   if(json.status !=0){
+			    location.reload();                                            
+		     }
+		  console.log("success");
+	  })
+	   .fail(function(data){
+		    $("#result").html(data.content);
+		   if(json.status !=0){
+			    location.reload();                                            
+		     }
+		console.log("error");	
+ 	 })
+  	 .always(function(){
+		console.log("complete");
+	 }); 
+   }
+  });*/
+	</script>
+	<script type="text/javascript">
+		google_ad_client = "ca-pub-7116729301372758";
+		google_ad_slot = "5052271949";
+		google_ad_width = 728;
+		google_ad_height = 90;
+	</script>
+
+</block>
+<block name="body">
+<div class="bbs_line">
+	<a href="__MODULE__/Index/index">首页</a>>
+	<a href="__MODULE__/Bbs/index">论坛</a>>
+	<a href=__MODULE__/Bbs/board_list/id/<{$board_id}>><{$board}></a>>
+	<a href="__MODULE__/Bbs/add">发帖</a>
+</div>
+<div class="bbs_head">标题：<{$title}> 
+	<span class="right"><{$hot}>阅</span>
+</div>
+<div class="bbs_view"><{$content}></div>
+<div class="bbs_view_u">
+	<b class="right"><{$date}>
+		<br/>
+		<div class="bshare-custom">分享:<div class="bsPromo bsPromo2"></div><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=1&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+	
+	</b>
+	<br/>
+	<if condition="$my_id eq $user_id">
+	<a href="__CONTROLLER__/change_post/id/<{$post_id}>">修改/移动帖子</a>
+	</if>
+</div>
+
+
+
+<div class="bbs_user">
+	楼主:	<if condition="$user_img eq ''">
+		<img class="image" src="__PUBLIC__/Uploads/user_head/defalut.jpg" /> 
+		<else/>
+		<img class="image" src="__PUBLIC__/Uploads/user_head/<{$user_img}>" /> 
+		</if>
+		<a href=__MODULE__/Home/zone/id/<{$user_id}>.html><{$user_name}></a>ID:<{$user_id}>//<a href="javascript:onclick=atAdd('<{$user_name}>'); return false">@Ta</a><br>
+	身份:<{$user_rank}><br>
+	签名:<{$user_character}><br>
+	<a href=__MODULE__/message/index/id/<{$user_id}>.html>给TA发送消息</a>
+</div>
+
+
+
+<div class="bbs_ping_line" >
+	<a href=__CONTROLLER__/respond_list/id/<{$post_id}>.html>【回复列表】【<{$count}>条回复】</a>
+</div>
+<volist name="respond_arr" id="vo" mod="5">
+	<if condition="$mod%2 neq 0">
+		<div class="bbs_ping_title">
+	<else/>
+		<div class="bbs_ping_title_two">
+	</if>
+	<{$count-$mod}>楼:<a href=__MODULE__/Home/zone/id/<{$vo.respond_user_id}>.html><span style="color:#FFABAB"><{$vo.respond_user_name}></span></a>//(ID:<{$vo.respond_user_id}>):</span><{:ubb($vo["respond_content"])}><span class="right"><{$vo.respond_time}><a href="javascript:onclick=atAdd('<{$vo.respond_user_name}>'); return false">@Ta</a>
+</span></div>
+</volist>
+<div class="bbs_ping_line"><a href=__CONTROLLER__/respond_list/id/<{$post_id}>.html>【查看更多回复】</a></div>
+
+
+
+
+
+<div class="bbs_su">
+	<div id="result"></div>
+<if condition="$status neq 0">
+<form method='post' action="<{:U('add_respond')}>">
+	<textarea name="content" id="content" type="text" value="" style="width:100%;height:200px;visibility:hidden;"></textarea>
+	<input type="hidden" name="id" id="post_id"value="<{$post_id}>" class="left" />
+	<input type="submit" name="submit" id="submit" class="button white" value="回复">
+	</form >
+	<a >如果无法上传附件或者文件,请更改换浏览器再试</a><br />
+	快捷方式:<a href="javascript:onclick=codeAdd(); return false">添加代码</a>|<a href="javascript:onclick=urlAdd(); return false">添加超链接</a>|<a href="javascript:onclick=imgAdd(); return false">添加图片链接</a>
+<else/>
+	管理员已经锁定此贴，禁止回复
+	</if>
+</div>
+</block>

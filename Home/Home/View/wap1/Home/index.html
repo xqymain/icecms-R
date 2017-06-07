@@ -1,0 +1,27 @@
+<extend name="Public/body"/>
+<block name="title">
+<title><{$user_name}>个人中心</title>
+</block>
+<div class="tp"><a href=__MODULE__/Index/index>首页</a>|<a href=__MODULE__/Bbs/index>论坛</a>|<a href=__MODULE__/Bbs/index>发帖</a></div>
+你好:<a href=__MODULE__/Home/index><{$user_name}></a>
+<block name="body">
+<div class="tp">个人资料</div>
+<a href=__MODULE__/Message/index>信箱</a>|<a href=__URL__/zone/<{$uuser_id}>>我的空间</a>|<a href=__URL__/zone/>排版</a>
+<div class='box'>
+	ID:<{$user_id}><hr>
+	用户名:<{$user_name}><hr>
+	邮箱:<{$user_email}><hr>
+	手机号码:<{$user_phone}>【不可修改】<hr>
+	性别:<{$user_sex}><hr>
+	积分:<{$user_integral}><hr>
+	金币:<{$user_money}><hr>
+	身份:<{$user_rank}><hr>
+	回复总数:<{$user_respond_number}><hr>
+	帖子总数:<{$user_theme_number}><hr>
+	注册日期:<{$user_reg_date}><hr>
+	个性签名:<{$user_character}><hr>
+	上次登录ip:<{$user_login_last_ip}><hr>
+	上次登录时间:<{$user_last_login_time}><hr>
+	<a href=__URL__/change>修改资料【包括密码】</a>
+</div>
+</block>

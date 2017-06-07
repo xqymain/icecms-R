@@ -1,0 +1,59 @@
+<extend name="Public/body"/>
+<block name="title">
+<title><{$title}></title>
+</block>
+<block name="body">
+<div class="tp"><a href=__MODULE__/Bbs/index>论坛</a>》》<a href=__MODULE__/Bbs/board_list/id/<{$board_id}>><{$board}></a></div>
+<hr>
+<div class="title">标题：<{$title}></div>
+发表时间:<{$date}>
+<br/>浏览次数:<{$hot}>
+<hr>正文：
+<div class="content"><{$content}></div>
+<!------------------附件--------------->
+<volist name="file" id="vo" mod="10">
+<?php 
+if((pathinfo($vo["accessory_destination"], PATHINFO_EXTENSION)=='jpg')||(pathinfo($vo["accessory_destination"], PATHINFO_EXTENSION)=='jpeg')||(pathinfo($vo["accessory_destination"], PATHINFO_EXTENSION)=='gif')||(pathinfo($vo["accessory_destination"], PATHINFO_EXTENSION)=='png')){
+	echo '<img src=__PUBLIC__/uploads/'.$vo["accessory_destination"].'><br>
+	备注：'.$vo["accessory_ps"];
+}else{
+	echo '<a href=__URL__/down/id/'.$vo["accessory_id"].'>'.$vo["accessory_destination"].'</a>
+	|下载次数:'.$vo["accessory_down_times"].'
+	|大小:'.size(getsize('__PUBLIC__/uploads/'.$vo["accessory_destination"])).'
+	|下载扣币:'.$vo["accessory_post_money"].'<br>
+	备注：'.$vo["accessory_ps"];
+}?>
+<br>
+</volist>
+<!------------------------------------------------->
+<!------------------投票--------------->
+<volist name="vote" id="vo" mod="10">
+<{$mod+1}>:<{$vo.bbs_vote_content}>|得票数:<{$vo.bbs_vote_number}>|<a href=__CONTROLLER__/vote/id/<{$vo.bbs_vote_id}>>投TA</a><br />
+</volist>
+<!------------------------------------------------->
+<hr>
+<div class="tp">楼主:<a href=__MODULE__/Home/zone/id/<{$user_id}>><{$user_name}></a>ID:<{$user_id}>
+	//<a href="javascript:onclick=atAdd('<{$user_name}>'); return false">@Ta</a></div>
+<div class="content">身份:<{$user_rank}><br>
+签名:<{$user_character}><br>
+<a href=__MODULE__/message/index/id/<{$user_id}>>给TA发送消息</a></div>
+<hr>
+<a href=__CONTROLLER__/respond_list/id/<{$post_id}>>【回复列表】【<{$count}>条回复】</a>
+<hr>
+<volist name="respond_arr" id="vo" mod="5">
+<{$count-$mod}>楼:<a href=__MODULE__/Home/zone/id/<{$vo.respond_user_id}>><{$vo.respond_user_name}></a>//(ID:<{$vo.respond_user_id}>):<{:ubb($vo["respond_content"])}><br>
+(<{$vo.respond_time}>)<hr>
+</volist>
+<a href=__CONTROLLER__/respond_list/id/<{$post_id}>>【查看更多回复】</a>
+<hr>
+<if condition="$status neq 0">
+<form method='post' action="<{:U('add_respond')}>">
+	<textarea name="content" rows="2" cols="30" placeholder="回复的内容"></textarea>
+	<br>
+	<input type="hidden" name="id" value="<{$post_id}>" class="left" />
+	<input type="submit" name "submit" value="回复">
+</form >
+<else/>
+	管理员已经锁定此贴，禁止回复
+</if>
+</block>

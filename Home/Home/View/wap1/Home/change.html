@@ -1,0 +1,17 @@
+<block name="body">
+<div class="tp">个人资料</div>
+<div class='box'>
+	<form action="__URL__/change_do" method="post">
+		昵称：<input type="text" name="user_name"value="<{$user_name}>"/>(1-10个字内)<hr>
+		邮箱：<input type="text" name="user_email" value="<{$user_email}>" /><hr>
+		身份：<input type="text" name="user_rank"value="<{$user_rank}>"/>(10个字内)<hr>
+		个性签名<input type="text" name="user_character"value="<{$user_character}>"/>(40个字内)<hr>
+		性别：<input name="user_sex" type="radio" value="男" checked=checked/>男
+		<input name="user_sex" type="radio" value="女"/>女<hr>
+		新密码：<input type="password" name="user_password" placeholder="新密码" />（不修改留空）<hr>
+		确认新密码：<input type="password" name="new_password" placeholder="重复输入新密码" />（不修改留空）<hr>
+		<input type="submit" name="submit" value="确定修改"/>
+	</form>
+	<a href=__URL__/index>返回</a>
+</div>
+</block>

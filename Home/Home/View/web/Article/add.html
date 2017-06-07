@@ -1,0 +1,44 @@
+<extend name="web:Public:body"/>
+<block name="title">
+<title>投稿</title>
+<script charset="utf-8" src="__PUBLIC__/editor/kindeditor-min.js"></script>
+<script charset="utf-8" src="__PUBLIC__/editor/lang/zh_CN.js"></script>
+<script>
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#editor_id');
+        });
+</script>
+</block>
+<block name="body">
+<div class="content-wrap">
+	<div class="content">
+		<header class="archive-header">
+	文明投稿（需要管理员审核才能显示出来）
+		</header>
+<form name="LoginForm" action="__URL__/add_do.html"enctype="multipart/form-data" method="post">
+	<p>
+	<label  class="label">标题:</label>
+	<input name="title" type="text" class="input" placeholder="标题"  />
+	<p/>
+	<hr>
+	<p>
+	<label class="label">内容:</label>
+		<textarea id="editor_id" name="content" style="width:700px;height:300px;">
+		&lt;strong&gt;内容&lt;/strong&gt;
+		</textarea>
+	<br>
+	<p/>
+	选择文章分类
+		版块选择:<select name="board_id">
+<volist name="board_arr_" id="vo">
+<option value="<{$vo.article_board_id}>"><{$vo.article_board_name}></option>
+</volist>
+	</select>
+		<div class="we1">
+	<input type="submit" name="submit" value="投稿" class="bbs_post"/>	
+		</div>
+	</p>
+</form>
+</div>
+	</div>
+</block>

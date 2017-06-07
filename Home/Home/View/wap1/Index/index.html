@@ -1,0 +1,43 @@
+<extend name="Public/body"/>
+<block name="title">
+<title>首页</title>
+</block>
+<block name="body">
+<{$msg}>
+<{$atmsg}>
+<div class="tp"><a href=__MODULE__/Bbs/index>论坛</a>|<a href=__MODULE__/Bbs/add>发帖</a>|<a href=__MODULE__/Article/index>文章</a>|<a href=__MODULE__/Article/add>投稿</a></div>
+<div class="tp"><a href=__MODULE__/Home/index>个人中心</a>|<a href=__MODULE__/Bbs/user_post>我的帖子</a>|<a href=__MODULE__/Home/dark_home>DARK_HOME(小黑屋)</a></div>
+你好:<a href=__MODULE__/Home/index><{$user_name}></a>
+<block name="body">
+<br>
+<img src=/ice4/Public/logo.png width=130px height=150px>
+<div class="tp">【版块】<a href=__MODULE__/Bbs/board_list/id/3>官方公告</a></div>
+<div class='box'>
+	<volist name="post_list_3" id="vo" mod="8">
+	<a href=__MODULE__/bbs/read/id/<{$vo.post_id}>><{$vo.post_title}></a><br>
+	</volist>
+</div>
+<div class="tp">动态帖子|<a href=__MODULE__/Bbs/add>发帖</a>|<a href=__MODULE__/Bbs/new_post>最新帖子</a></div>
+<div class='box'>
+<div class='box'>
+	<volist name="list" id="vo" mod="8">
+	<a href=__MODULE__/bbs/read/id/<{$vo.post_id}>><{$vo.post_title}></a><br>
+	</volist>
+</div>
+
+<div class="tp">【版块】<a href=__MODULE__/Bbs/board_list/id/4>程序BUG提交</a></div>
+<div class='box'>
+	<volist name="post_list_4" id="vo" mod="8">
+	<a href=__MODULE__/Bbs/read/id/<{$vo.post_id}>><{$vo.post_title}></a><br>
+	</volist>
+</div>
+
+
+<div class="tp">动态文章|<a href=__MODULE__/Article/add>投稿</a><a href=__MODULE__/Article/new_article>最新文章</a></div>
+<div class='box'>
+<div class='box'>
+	<volist name="a_list" id="vo" mod="8">
+	<a href=__MODULE__/article/read/id/<{$vo.article_id}>><{$vo.article_title}></a><br>
+	</volist>
+</div>
+</block>

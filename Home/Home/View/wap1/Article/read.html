@@ -1,0 +1,37 @@
+<extend name="Public/body"/>
+<block name="title">
+<title><{$title}></title>
+</block>
+<block name="body">
+<div class="tp"><a href=__URL__/index>文章</a>》》<a href=__URL__/board_list/id/<{$board_id}>><{$board}></a></div>
+<hr>
+<div class="title">标题：<{$title}></div>
+投稿时间:<{$date}>
+<br/>浏览次数:<{$hot}>
+<hr>正文：
+<div class="content"><{$content}></div>
+<hr>
+<a href=__CONTROLLER__/praise/id/<{$article_id}>>赞</a>(<{$praise_times}>)|<a href=__CONTROLLER__/lookdown/id/<{$article_id}>>吐槽</a>(<{$lookdown_times}>)
+<hr>
+<div class="tp">投稿者:<a href=__MODULE__/Home/zone/id/<{$user_id}>><{$user_name}></a>ID:<{$user_id}></div>
+<a href=__MODULE__/message/index/id/<{$user_id}>>给TA发送消息</a></div>
+<hr>
+<a href=__CONTROLLER__/respond_list/id/<{$article_id}>>【评论列表】【<{$count}>条评论】</a>
+<hr>
+<volist name="respond_arr" id="vo" mod="5">
+<{$count-$mod}>楼:<a href=__MODULE__/Home/zone/id/<{$vo.respond_user_id}>><{$vo.respond_user_name}></a>//(ID:<{$vo.respond_user_id}>):<{:ubb($vo["respond_content"])}><br>
+(<{$vo.respond_time}>)<hr>
+</volist>
+<a href=__CONTROLLER__/respond_list/id/<{$article_id}>>【查看更多评论】</a>
+<hr>
+<if condition="$status neq 0">
+<form method='post' action="<{:U('add_respond')}>">
+	<textarea name="content" rows="2" cols="30" placeholder="评论的内容"></textarea>
+	<br>
+	<input type="hidden" name="id" value="<{$article_id}>" class="left" />
+	<input type="submit" name "submit" value="回复">
+</form >
+<else/>
+	管理员已经锁定此文章，禁止评论
+</if>
+</block>

@@ -1,0 +1,17 @@
+<extend name="Public/body"/>
+<block name="title">
+<title><{$title}></title>
+</block>
+<block name="body">
+<div class="tp"><{$title}></div>
+<hr>
+<volist name="list" id="vo" mod="20">
+<{$mod+1}>
+<a href=__CONTROLLER__/read/id/<{$vo.article_id}>><{$vo.article_title}></a>
+<br><a href=__MODULE__/Home/zone/id/<{$vo.article_ower_id}>><{$vo.article_ower_name}></a>//(ID:<{$vo.article_ower_id}>)<br>
+(<{$vo.article_date}>)<hr>
+</volist>
+<{$page}>
+<a href="__CONTROLLER__">返回</a>
+<hr>
+</block>

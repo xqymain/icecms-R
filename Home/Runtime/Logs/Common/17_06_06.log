@@ -1,0 +1,72 @@
+[ 2017-06-06T19:44:28+08:00 ] 111.161.109.103 /Public/images/bg.JPG
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000850s ]
+ERR: 无法加载模块:Public
+
+[ 2017-06-06T21:05:02+08:00 ] 111.161.109.103 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000884s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-06T21:05:49+08:00 ] 111.161.109.103 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000892s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-06T21:06:08+08:00 ] 111.161.109.103 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000917s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-06T21:06:33+08:00 ] 111.161.109.103 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000869s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-06T21:07:33+08:00 ] 111.161.109.103 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000916s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-06T21:08:23+08:00 ] 111.161.109.103 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000853s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-06T21:08:35+08:00 ] 111.161.109.103 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000941s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-06T21:08:57+08:00 ] 111.161.109.103 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000884s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-06T21:09:28+08:00 ] 111.161.109.103 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000886s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-06T21:09:44+08:00 ] 111.161.109.103 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000899s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-06T21:10:44+08:00 ] 111.161.109.103 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000882s ]
+ERR: 无法加载模块:Img
+

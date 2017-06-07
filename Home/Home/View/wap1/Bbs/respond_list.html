@@ -1,0 +1,16 @@
+<extend name="Public/body"/>
+<block name="title">
+<title><{$title}></title>
+</block>
+<block name="body">
+<div class="tp">标题：<{$title}></div>
+【回复列表】
+<hr>
+<volist name="list" id="vo" mod="20">
+<{$mod+1}>楼:<a href=__MODULE__/Home/zone/id/<{$vo.respond_user_id}>><{$vo.respond_user_name}></a>//(ID:<{$vo.respond_user_id}>):<{:ubb($vo["respond_content"])}><br>
+(<{$vo.respond_time}>)<hr>
+</volist>
+<{$page}>
+<a href="__CONTROLLER__/read/id/<{$post_id}>">返回</a>
+<hr>
+</block>

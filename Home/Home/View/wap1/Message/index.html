@@ -1,0 +1,25 @@
+<extend name="Public/body"/>
+<block name="title">
+<title><{$title}></title>
+</block>
+<block name="body">
+<div class="tp"><a href=__MODULE__/Index/index>首页</a>|<a href=__MODULE__/Bbs/index>论坛</a>|<a href=__MODULE__/Bbs/add>发帖</a></div>
+<div class="tp"><a href=__MODULE__/Article/index>文章</a>|<a href=__MODULE__/Article/add>投稿</a></div>
+<div class="tp"><{$title}>|<a href=__URL__/sended>已发送</a>|<a href=__URL__/receive>已接收</a>|<a href=__URL__/atreceive>@消息</a></div>
+<hr>
+<form method="post" action=__URL__/send_do>
+	<if condition="$_GET['id'] eq ''">
+	输入对方的ID:<input type="text" name="to_id"  placeholder="ID号"/><br>
+	<else/>
+	<input type="hidden" name="to_id" value="<{$id}>"/>
+	你正在向：<{$user_name}>(ID:<{$id}>)发送消息<br>
+	</if>
+	内　　容:<textarea name="content" rows="2" cols="30" placeholder="内容(<150字)"></textarea><br>
+<input name="submit" type="submit" value="发送">
+</form>
+<hr>
+</volist>
+<{$page}>
+<hr>
+<a href="../../">返回</a>
+</block>

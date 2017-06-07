@@ -1,0 +1,61 @@
+<extend name="Public/body"/>
+<block name="title">
+<title>发帖</title>
+</block>
+<block name="body">
+<div class="tp"><a href=__MODULE__/Index/index>首页</a>|<a href=__MODULE__/Bbs/index>论坛</a>|<a href=__MODULE__/Bbs/add>发帖</a></div>
+<div class="tp"><a href=__MODULE__/Article/index>文章</a>|<a href=__MODULE__/Article/add>投稿</a></div>
+	<div class="tp">文明发帖</div>
+	<div class="tp">
+<form name="LoginForm" method="post" name="uploadfile">
+	<input name="file_number" rows=1" cols="1" id="number" placeholder="附件个数"/>
+	<input type="hidden" name="vote_number" value="<{$v_n}>" class="left" />
+	<input type="submit" value="添加附件"/>
+</form >
+<form name="LoginForm" method="post" name="vote">
+	<input name="vote_number" rows=1" cols="1" id="number"  placeholder="投票项数"/>
+	<input type="hidden" name="file_number" value="<{$f_n}>" class="left" />
+	<input type="submit" value="添加投票项"/>
+</form >
+</div>
+<form name="LoginForm" action="__URL__/add_do.html"enctype="multipart/form-data" method="post">
+	<p>
+	<label  class="label">标题:</label>
+	<input name="title" type="text" class="input" placeholder="标题"  />
+	<p/>
+	<hr>
+	<p>
+	<label class="label">内容:</label>
+	<textarea name="content" rows="2" cols="30" placeholder="内容"></textarea>
+	<br>
+	<p/>
+	<!-------------------------------------------------------------------------------------------------------->
+	<if condition="$f_n neq 0">
+	附件（附件大小小于<{$maxSize}>）：<br>
+	<for start="1" end="$f_n" comparison="elt" step="1" name="i" >
+	<{$i}>.<input type="file" name="<{$i}>" />下载所需金币：<input type="text" name="<{$i}>_m"  placeholder="金币数" />备注：<input type="text" name="<{$i}>_p"  placeholder="附件备注" /></br> 
+	<hr>
+	</for>
+	<input type="hidden" name="file_number" value="<{$f_n}>" class="left" />	
+	</if>
+	<p>
+	<!-------------------------------------------------------------------------------------------------------->
+	<if condition="$v_n neq 0">
+	投票（小于20字）：<br>
+	<for start="1" end="$v_n" comparison="elt" step="1" name="i" >
+	投票选项<{$i}>:<input type="text" name="<{$i}>_m"  placeholder="投票内容" /></br> 
+	<hr>
+	</for>
+	<input type="hidden" name="vote_number" value="<{$v_n}>" class="left" />	
+	</if>
+	<!-------------------------------------------------------------------------------------------------------->
+
+	选择帖子分类
+		<volist name="board_arr_" id="vo">
+		<input name="board_id" type="radio" value="<{$vo.bbs_board_id}>" checked=checked/><{$vo.bbs_board_name}>
+		</volist>
+			<br>
+	<input type="submit" name="submit" value="发表" class="left" />	
+	</p>
+</form>
+</block>

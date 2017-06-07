@@ -1,0 +1,42 @@
+[ 2017-06-03T05:42:41+08:00 ] 39.68.223.156 /tool/bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001665s ]
+ERR: 无法加载模块:Tool
+
+[ 2017-06-03T05:42:51+08:00 ] 39.68.223.156 /tool/bg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000894s ]
+ERR: 无法加载模块:Tool
+
+[ 2017-06-03T08:37:39+08:00 ] 34.209.5.10 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000885s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-03T08:37:42+08:00 ] 34.209.5.10 /Public/images/bg.JPG
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001388s ]
+ERR: 无法加载模块:Public
+
+[ 2017-06-03T08:38:15+08:00 ] 34.209.5.10 /Public/images/bg.JPG
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000886s ]
+ERR: 无法加载模块:Public
+
+[ 2017-06-03T08:39:21+08:00 ] 34.209.5.10 //img/default.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000887s ]
+ERR: 无法加载模块:Img
+
+[ 2017-06-03T15:21:58+08:00 ] 220.181.51.93 /robots.txt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000934s ]
+ERR: 无法加载模块:Robots
+

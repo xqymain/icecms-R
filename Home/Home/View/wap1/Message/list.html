@@ -1,0 +1,27 @@
+<extend name="Public/body"/>
+<block name="title">
+<title><{$title}></title>
+</block>
+<block name="body">
+<div class="tp"><a href=__MODULE__/Index/index>首页</a>|<a href=__MODULE__/Bbs/index>论坛</a>|<a href=__MODULE__/Bbs/add>发帖</a></div>
+<div class="tp"><a href=__MODULE__/Article/index>文章</a>|<a href=__MODULE__/Article/add>投稿</a></div>
+<div class="tp"><a href=__URL__/index>发消息</a>|<a href=__URL__/sended>已发送</a>|<a href=__URL__/receive>已接收</a>|<a href=__URL__/atreceive>@消息</a></div>
+<hr>
+<volist name="list" id="vo" mod="20">
+<{$mod+1}>
+<div class="content"><{$vo.message_content}></div>
+<br><a href=__MODULE__/Home/zone/id/<{$vo.message_from_id}>>发件方：<{$vo.message_from_name}></a>//(ID:<{$vo.message_from_id}>)<br>
+<a href=__MODULE__/Home/zone/id/<{$vo.message_to_id}>>收件方：<{$vo.message_to_name}></a>//(ID:<{$vo.message_to_id}>)<br>
+(<{$vo.message_send_time}>)//
+<if condition="$vo['message_if_read'] eq 1">
+对方已读
+<else/>
+对方未读
+</if>
+<hr>
+</volist>
+
+<{$page}>
+<a href="../../">返回</a>
+<hr>
+</block>

@@ -1,0 +1,59 @@
+<extend name="./Public/body"/>
+<block name="title">
+<title>首页_<{$title}></title>
+<meta name="description" content="<{$description}>"/>
+<meta name="keywords" content="<{$key}>"/>
+</block>
+<block name="body">
+<div id="mess"><{$msg}></div>
+<div id="mess"><{$atmsg}></div>
+<header class="head">
+<if condition="$user_name eq ''">
+<a href="__MODULE__/Login"><span>登录</span></a> <a href="__MODULE__/Login/reg"><span>注册</span></a>
+</if>
+</header>
+<div class="top">
+<img src="__PUBLIC__/LOGO.png" alt="logo">
+</div>
+
+<div class="nav"><a href="__MODULE__/Home">资料</a><a href="__MODULE__/Bbs/">论坛</a> <a href="__MODULE__/Article">文章</a><a href="__MODULE__/Bbs/add">发帖</a><a href="__MODULE__/Article/add">投稿</a></div>
+
+
+
+<div class="title"><a href=__MODULE__/Bbs/board_list/id/4>TOP</a></div>
+<volist name="post_list_4" id="vo" mod="8">
+<div class="title_bbs">	<a href=__MODULE__/Bbs/read/id/<{$vo.post_id}>.html><{$vo.post_title}></a></div>
+</volist>
+
+
+
+
+<div class="title2">动态帖子|<a href=__MODULE__/Bbs/new_post>查看最新帖子</a><a href=__MODULE__/Bbs/add><span class="right">发帖</span></a></div>
+<volist name="list" id="vo" mod="8">
+<div class="title_bbs"><{$i}>.<a href=__MODULE__/bbs/read/id/<{$vo.post_id}>.html><b><{$vo.post_title}></b></a>
+<br>
+	<div class="bbs_fl_title">
+		<?php
+			echo htmlspecialchars(sub_str($vo['post_content'],0,60,0)).'....';
+		?>
+		</div>
+</div>
+</volist>
+
+
+<div class="title"><a href=__MODULE__/Bbs/board_list/id/3>ICECMS BUG提交</a></div>
+<volist name="post_list_3" id="vo" mod="8">
+<div class="title_bbs">	<a href=__MODULE__/bbs/read/id/<{$vo.post_id}>.html><{$vo.post_title}></a></div>
+</volist>
+
+
+<div class="title"><a href="__MODULE__/Article">推荐文章</a><span class="right"><a href="__MODULE__/Article/add">投稿</a></span></div>
+<volist name="a_list" id="vo" mod="8">
+<div class="title_bbs"><a href=__MODULE__/Article/read/id/<{$vo.article_id}>.html><{$vo.article_title}></a></div>
+</volist>
+<div class="title">小小工具</div>
+<div class="title_bbs">
+	<a href=__MODULE__/Tool/kugoumusic>音乐搜索（直链下载）</a>
+</div>
+<{$website_foot}>
+</block>
