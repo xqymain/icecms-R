@@ -1,4 +1,5 @@
 # icecms-R 开源的CMS
+环境PHP>=5.3/MYSQL
 本程序由ICECMS修改而成，遂取名icecms-R，R可能是ReCreate吧  0.0 <br />
 本程序自由开源，供学习用途（因为现在只是勉强能使用，而且“相对稳定”，仍不建议大家用于重要/商业用途）<br />
 本人不精通，甚至算不上接触PHP！所以不能提供过多的技术支持，有相关专业者可向我提交代码，在Readme页面上会永久留下您的名字。 <br />
@@ -25,3 +26,4 @@ If any other bug can be submitted lssues, welcome harassment! <br />
 Email:201330010330@hnu.edu.cn <br />
 My Web:https://yxom.6b7.net <br />
 YTech & Home of Yanzhou! <br />
+原项目地址：<a herf="https://github.com/icediffrent/icecms">icecms</a>
