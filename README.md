@@ -26,4 +26,4 @@ If any other bug can be submitted lssues, welcome harassment! <br />
 Email:201330010330@hnu.edu.cn <br />
 My Web:https://yxom.6b7.net <br />
 YTech & Home of Yanzhou! <br />
-原项目地址：<a href="https://github.com/icediffrent/icecms">icecms</a><br />
+原项目地址：<a href="https://github.com/icedifferent/icecms">icecms</a><br />
