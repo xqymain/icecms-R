@@ -6,7 +6,7 @@
 本项目不定期更新，这个版本是修订无数次之后发出的，原项目有很多问题，一一整合、修复。<br />
 安装可以  您的域名/install <br />
 然后填写您的数据库相关信息，如果您数据库端口不是3306，那么恭喜您中奖了，请在config.php手动修改并导入sql。<br />
-前后台用户名密码均为admin 123456，若需要修改，可在数据库中修改，MD5加密。<br />
+前后台用户名密码均为admin 12345678，若需要修改，可在数据库中修改，MD5加密。<br />
 <br />
 已知BUG：后台可能无法登录（不影响使用）<br />
 如有其他bug可提交lssues，欢迎骚扰！<br />
@@ -18,12 +18,12 @@ I am not proficient, not even touch PHP! So you can not provide too much technic
 The project is updated from time to time, this version is revised many times after the issue, the original project has a lot of problems, one by one integration, repair. <br />
 Install your domain name / install <br />
 And then fill in your database related information, if your database port is not 3306, then congratulations on your winning, please manually modify and import sql in config.php. <br />
-Before and after the user name and password are admin 123456, if you need to modify, can be modified in the database, MD5 encryption. <br />
+Before and after the user name and password are admin 12345678, if you need to modify, can be modified in the database, MD5 encryption. <br />
 <br />
 Known BUG: the background may not be able to log in (does not affect the use) <br />
 If any other bug can be submitted lssues, welcome harassment! <br />
 <br />
 Email:201330010330@hnu.edu.cn <br />
-My Web:https://yxom.6b7.net <br />
-YTech & Home of Yanzhou! <br />
+My Web:https://ytech.win <br />
+YxomTech & Home of Yanzhou! <br />
 原项目地址：<a href="https://github.com/icedifferent/icecms">icecms</a><br />
