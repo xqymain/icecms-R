@@ -19,23 +19,13 @@
 <title><?php echo ($title); ?></title>
 
     <style type="text/css" id="custom-background-css">
-body.custom-background { background-image: url('/Public/webcss/bg.png'); background-repeat: repeat; background-position: top left; background-attachment: scroll; }
-</style>
-    <style type="text/css">    </style>
-    <script>
-window._deel = {name: 'Recreate',url: '/', ajaxpager: '', commenton: 0, roll: [0,0]}
-</script>
-<script>
-    var _hmt = _hmt || [];
-   (function() {
-     var hm = document.createElement("script");
-     hm.src = "https://hm.baidu.com/hm.js?fa2cacff4885e61449d232d02bd97d9b";
-     var s = document.getElementsByTagName("script")[0]; 
-     s.parentNode.insertBefore(hm, s);
-   })();
-   </script>
-    <script type='text/javascript' src='/Public/webjs/global.js'></script>
- 	 <script language ="javascript" type ="text/javascript">
+	body.custom-background { background-image: url('/Public/webcss/bg.png'); background-repeat: repeat; background-position: top left; background-attachment: scroll; }
+   </style>
+   <script>
+	window._deel = {name: 'YxomTech',url: '/', ajaxpager: '', commenton: 0, roll: [0,0]}
+  </script>   
+  <script type='text/javascript' src='/Public/webjs/global.js'></script>
+  <script language ="javascript" type ="text/javascript">
 		function atAdd(at){
 			//alert("test");
 			var content =document.getElementsByName("content")[0]
@@ -181,7 +171,7 @@ window._deel = {name: 'Recreate',url: '/', ajaxpager: '', commenton: 0, roll: [0
 
 	<div style="float:right;">
 		<?php
- if(!isset($_COOKIE['user_sid'])){ echo '<i class="fa fa-power-off"></i> <a href="/index.php/Home/Login">Login</a>'; }else{ echo "欢迎来到兖州之家 V5.1"; } ?>
+ if(!isset($_COOKIE['user_sid'])){ echo '<i class="fa fa-power-off"></i> <a href="/index.php/Home/Login">Login</a>'; }else{ echo "欢迎来到兖州之家 V5.2"; } ?>
 	</div> </h2>
     </div>
     <!-- body开始--!>
@@ -271,9 +261,6 @@ window._deel = {name: 'Recreate',url: '/', ajaxpager: '', commenton: 0, roll: [0
         <li><a href="http://icecms.cn/" rel="friend co-worker neighbor crush" target="_blank">ICECMS</a></li>
 	<li><a href="http://artrix.tech/" rel="friend co-worker neighbor crush" target="_blank">Artrix</a></li>
 
-
-
-
 		</ul>
 	</div>
 
@@ -295,6 +282,7 @@ window._deel = {name: 'Recreate',url: '/', ajaxpager: '', commenton: 0, roll: [0
 		</div>
 	  <ul class='xoxo blogroll'>
 		<li><a href="https://www.2345.com/?k45626210" target="_blank">》Click《</a></li>
+		<li><a href="https://github.com/xqymain/icecms-R" target="_blank">Github</a></li>							     
 	  </ul>
          </div>
 
@@ -316,11 +304,10 @@ window._deel = {name: 'Recreate',url: '/', ajaxpager: '', commenton: 0, roll: [0
 </aside>
 </section>
 <footer style="border-top: 1px solid ;background-image: url('/Public/webcss/footbg.jpg'); background-repeat: repeat;" class="footer">
-<div class="footer-inner"><img id="webimg" src="/Public/web.png" style="position:absolute;">
+<div class="footer-inner">
 	<div class="footer-copyright" align="center">
            
-		Copyright 2015-2017   YTech & ICECMS  | <a rel="nofollow" target="_blank" href="/about">ABOUT US</a> | <a rel="nofollow" target="_blank" href="/index.php/Home/Home/dark_home.html">DARK HOUSE</a> <br />
- <a href="http://www.miitbeian.gov.cn" target="_blank">豫ICP备15010292号-11 | 豫ICP备15010292号-13 | 吉ICP备15004778号-9 </a><br />  
+		Copyright 2015-2017   YTech & ICECMS  | <a rel="nofollow" target="_blank" href="/about">ABOUT US</a> | <a rel="nofollow" target="_blank" href="/index.php/Home/Home/dark_home.html">DARK HOUSE</a> <br />  
 		<span class="trackcode pull-right">Tell us 邮箱:201330010330@hnu.edu.cn</span></div></div>
 </footer>
 

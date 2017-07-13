@@ -1,14 +1,18 @@
 <?php
-$cfg_dbhost="me4j7z9j.2310lan.dnstoo.com";
-$cfg_dbuser="szdata_f";
-$cfg_dbpwd="xqymain";
-$cfg_dbname="szdata";
-$conn = @mysql_connect("me4j7z9j.2310lan.dnstoo.com","szdata_f","xqymain");
+$cfg_dbhost="localhost";
+$cfg_dbuser="root";
+$cfg_dbpwd="xing233";
+$cfg_dbname="data";
+$conn = @mysqli_connect($cfg_dbhost, $cfg_dbuser, $cfg_dbpwd);
 	if (!$conn){
-		die("连接数据库失败：" . mysql_error());
+		die("连接数据库失败：" . mysqli_error());
 	}
-	mysql_select_db( "szdata", $conn);
-	mysql_query("SET NAMES utf8");
-	mysql_query("set character_set_client=utf8"); 
-	mysql_query("set character_set_results=utf8");
+	else{
+	mysqli_select_db($cfg_dbname, $conn);
+	mysqli_query("SET NAMES utf8");
+	mysqli_query("set character_set_client=utf8");
+	mysqli_query("set character_set_results=utf8");
+	echo("Errorcode: " . mysqli_errno($conn));
+	}
+mysqli_close($conn);
 ?>
