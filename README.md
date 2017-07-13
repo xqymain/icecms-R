@@ -8,6 +8,7 @@
 然后填写您的数据库相关信息，如果您数据库端口不是3306，那么恭喜您中奖了，请在config.php手动修改并导入sql。<br />
 前后台用户名密码均为admin 12345678，若需要修改，可在数据库中修改，MD5加密。<br />
 <br />
+警告：该程序有很多功能是仅用于PHP7的，比如数据库测试和安装程序，不保证此程序能在PHP5环境下稳定运行！<br />
 已知BUG：后台可能无法登录（不影响使用）<br />
 如有其他bug可提交lssues，欢迎骚扰！<br />
 <br /><br />
@@ -20,6 +21,7 @@ Install your domain name / install <br />
 And then fill in your database related information, if your database port is not 3306, then congratulations on your winning, please manually modify and import sql in config.php. <br />
 Before and after the user name and password are admin 12345678, if you need to modify, can be modified in the database, MD5 encryption. <br />
 <br />
+Warning: The program has a lot of features is only used for PHP7, such as database testing and installation procedures, does not guarantee that this program can be stable in the PHP5 environment!<br />
 Known BUG: the background may not be able to log in (does not affect the use) <br />
 If any other bug can be submitted lssues, welcome harassment! <br />
 <br />
