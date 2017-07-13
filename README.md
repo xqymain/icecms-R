@@ -22,7 +22,7 @@ And then fill in your database related information, if your database port is not
 Before and after the user name and password are admin 12345678, if you need to modify, can be modified in the database, MD5 encryption. <br />
 <br />
 Warning: The program has a lot of features is only used for PHP7, such as database testing and installation procedures, does not guarantee that this program can be stable in the PHP5 environment!<br />
-Known BUG: the background may not be able to log in (does not affect the use) <br />
+Known BUG: the Administrator management may not be able to log in (does not affect the use) <br />
 If any other bug can be submitted lssues, welcome harassment! <br />
 <br />
 Email:201330010330@hnu.edu.cn <br />
