@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2017-05-16 05:38:11
+-- Generation Time: 2017-07-13 11:33:31
 -- 服务器版本： 5.7.18-0ubuntu0.16.04.1
--- PHP Version: 7.0.15-0ubuntu0.16.04.4
+-- PHP Version: 7.0.18-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `data`
+-- Database: `output`
 --
 
 -- --------------------------------------------------------
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `icebbs_accessory` (
   `accessory_id` int(11) NOT NULL,
   `accessory_destination` varchar(255) DEFAULT NULL,
-  `accessory_time` datetime DEFAULT NULL,
+  `accessory_time` datetime DEFAULT '1979-01-01 00:00:00',
   `accessory_post_id` int(11) DEFAULT NULL,
   `accessory_post_if_money` int(1) DEFAULT '0',
   `accessory_post_money` int(11) DEFAULT NULL,
@@ -48,10 +48,10 @@ CREATE TABLE `icebbs_admin` (
   `admin_id` int(11) NOT NULL,
   `admin_name` varchar(30) DEFAULT NULL,
   `admin_sid` varchar(255) DEFAULT NULL,
-  `admin_login_last_ip` varchar(40) DEFAULT NULL,
-  `admin_login_ip` varchar(40) DEFAULT NULL,
-  `admin_login_time` datetime DEFAULT NULL,
-  `admin_last_login_time` datetime DEFAULT NULL,
+  `admin_login_last_ip` varchar(64) DEFAULT NULL,
+  `admin_login_ip` varchar(64) DEFAULT NULL,
+  `admin_login_time` datetime DEFAULT '1979-01-01 00:00:00',
+  `admin_last_login_time` datetime DEFAULT '1979-01-01 00:00:00',
   `admin_password` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -73,14 +73,14 @@ CREATE TABLE `icebbs_article` (
   `article_title` varchar(45) DEFAULT NULL,
   `article_ower_id` int(11) DEFAULT NULL,
   `article_content` longtext,
-  `article_date` datetime DEFAULT NULL,
+  `article_date` datetime DEFAULT '1979-01-01 00:00:00',
   `article_board_id` int(3) DEFAULT NULL,
   `article_sort` varchar(20) DEFAULT NULL,
   `article_hot` int(11) DEFAULT '0' COMMENT '0',
   `article_status` int(1) DEFAULT '3',
   `article_ower_name` varchar(20) DEFAULT NULL,
   `article_read_time` datetime DEFAULT NULL,
-  `article_ip` varchar(35) DEFAULT NULL,
+  `article_ip` varchar(64) DEFAULT NULL,
   `article_praise_times` int(11) DEFAULT '0',
   `article_lookdown_times` int(11) DEFAULT '0',
   `article_respond_time` datetime DEFAULT NULL,
@@ -123,8 +123,8 @@ INSERT INTO `icebbs_article_board` (`article_board_id`, `article_board_name`) VA
 CREATE TABLE `icebbs_article_respond` (
   `respond_id` int(11) NOT NULL,
   `respond_content` varchar(10000) DEFAULT NULL,
-  `respond_time` datetime DEFAULT NULL,
-  `respond_ip` varchar(40) DEFAULT NULL,
+  `respond_time` datetime DEFAULT '1979-01-01 00:00:00',
+  `respond_ip` varchar(64) DEFAULT NULL,
   `respond_status` int(1) DEFAULT '1',
   `respond_user_id` int(11) DEFAULT NULL,
   `respond_article_id` int(11) DEFAULT NULL,
@@ -199,7 +199,7 @@ CREATE TABLE `icebbs_bbs_post` (
   `post_title` varchar(40) DEFAULT NULL,
   `post_content` longtext,
   `post_ower_id` int(11) DEFAULT NULL,
-  `post_date` datetime DEFAULT NULL,
+  `post_date` datetime DEFAULT '1979-01-01 00:00:00',
   `post_board_id` int(11) DEFAULT NULL,
   `post_sort` varchar(15) DEFAULT NULL,
   `post_hot` int(11) DEFAULT '0',
@@ -207,7 +207,7 @@ CREATE TABLE `icebbs_bbs_post` (
   `post_ower_name` varchar(16) DEFAULT NULL,
   `post_read_time` datetime DEFAULT NULL,
   `post_respond_time` datetime DEFAULT NULL,
-  `post_ip` varchar(35) DEFAULT NULL,
+  `post_ip` varchar(64) DEFAULT NULL,
   `post_browser` varchar(200) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -228,8 +228,8 @@ INSERT INTO `icebbs_bbs_post` (`post_id`, `post_title`, `post_content`, `post_ow
 CREATE TABLE `icebbs_bbs_respond` (
   `respond_id` int(11) NOT NULL,
   `respond_content` varchar(2000) DEFAULT NULL,
-  `respond_time` datetime DEFAULT NULL,
-  `respond_ip` varchar(35) DEFAULT NULL,
+  `respond_time` datetime DEFAULT '1979-01-01 00:00:00',
+  `respond_ip` varchar(64) DEFAULT NULL,
   `respond_status` int(1) DEFAULT '1',
   `respond_user_id` int(11) DEFAULT NULL,
   `respond_post_id` int(11) DEFAULT NULL,
@@ -271,7 +271,7 @@ CREATE TABLE `icebbs_chat` (
   `chat_content` varchar(1000) DEFAULT NULL,
   `chat_user_id` int(11) DEFAULT NULL,
   `chat_user_name` varchar(20) DEFAULT NULL,
-  `chat_time` datetime DEFAULT NULL,
+  `chat_time` datetime DEFAULT '1979-01-01 00:00:00',
   `chat_status` int(1) DEFAULT '1'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -318,7 +318,7 @@ CREATE TABLE `icebbs_user` (
   `user_email` varchar(35) DEFAULT NULL,
   `user_phone` varchar(15) DEFAULT NULL,
   `user_sex` varchar(6) DEFAULT '未知',
-  `user_reg_date` datetime DEFAULT NULL,
+  `user_reg_date` datetime DEFAULT CURRENT_TIMESTAMP,
   `user_img` varchar(100) DEFAULT NULL,
   `user_sid` varchar(150) DEFAULT NULL,
   `user_status` int(1) DEFAULT '1',
@@ -326,9 +326,9 @@ CREATE TABLE `icebbs_user` (
   `user_character` varchar(255) DEFAULT NULL,
   `user_location` varchar(50) DEFAULT NULL,
   `user_born_date` date DEFAULT NULL,
-  `user_reg_ip` varchar(30) DEFAULT NULL,
-  `user_login_last_ip` varchar(30) DEFAULT NULL,
-  `user_login_ip` varchar(30) DEFAULT NULL,
+  `user_reg_ip` varchar(64) DEFAULT NULL,
+  `user_login_last_ip` varchar(64) DEFAULT NULL,
+  `user_login_ip` varchar(64) DEFAULT NULL,
   `user_violations_content` varchar(255) DEFAULT NULL,
   `user_money` int(11) DEFAULT '100',
   `user_sign_in` int(1) DEFAULT '0',
@@ -339,8 +339,8 @@ CREATE TABLE `icebbs_user` (
   `user_message_time` bigint(20) DEFAULT '0',
   `user_state` int(1) DEFAULT '0',
   `user_password` varchar(60) DEFAULT NULL,
-  `user_login_time` datetime DEFAULT '0000-00-00 00:00:00',
-  `user_last_login_time` datetime DEFAULT '0000-00-00 00:00:00',
+  `user_login_time` datetime DEFAULT '1979-01-01 00:00:00',
+  `user_last_login_time` datetime DEFAULT '1979-01-01 00:00:00',
   `user_integral` int(11) DEFAULT '0',
   `user_respond_number` int(6) DEFAULT '0',
   `user_rank` varchar(20) DEFAULT NULL,
@@ -354,7 +354,7 @@ CREATE TABLE `icebbs_user` (
 --
 
 INSERT INTO `icebbs_user` (`user_id`, `user_name`, `user_email`, `user_phone`, `user_sex`, `user_reg_date`, `user_img`, `user_sid`, `user_status`, `user_act_time`, `user_character`, `user_location`, `user_born_date`, `user_reg_ip`, `user_login_last_ip`, `user_login_ip`, `user_violations_content`, `user_money`, `user_sign_in`, `user_theme_number`, `user_respond_time`, `user_announce_time`, `user_say_time`, `user_message_time`, `user_state`, `user_password`, `user_login_time`, `user_last_login_time`, `user_integral`, `user_respond_number`, `user_rank`, `user_respond_a_time`, `user_zone`, `user_token`) VALUES
-(1, 'admin', '我是管理员我做主，我就不填，你咬我啊', '13888888888', '无', '0000-01-20 00:00:00', '2016-02-05/56b4a460837c0.png', 'c3cc5233380b7a7b178931fbb492176b', 1, NULL, '要有最朴素的生活和最遥远的梦想，即使天寒地冻，路远马亡', NULL, NULL, NULL, '182.41.90.199', '112.235.245.169', '', 3718, 0, 187, 1454674067, 1494421879, 0, 0, 0, '2bbec4348dcc35cc62a74a01be72b2a6', '2017-05-12 20:56:07', '2017-05-10 21:06:08', 4875, 219, '小白鼠', NULL, '', '592d7af2e2f5a63991597b7385ff426c');
+(1, 'admin', '我是管理员我做主，我就不填，你咬我啊', '13888888888', '无', '0000-01-20 00:00:00', '2017-07-13/5966d4e464df1.jpg', 'c3cc5233380b7a7b178931fbb492176b', 1, NULL, '要有最朴素的生活和最遥远的梦想，即使天寒地冻，路远马亡', NULL, NULL, NULL, '112.235.245.169', '52.34.44.39', '', 3718, 0, 187, 1454674067, 1494421879, 0, 0, 0, '2bbec4348dcc35cc62a74a01be72b2a6', '2017-07-13 10:02:04', '2017-05-12 20:56:07', 4875, 219, '小白鼠', NULL, '', '592d7af2e2f5a63991597b7385ff426c');
 
 -- --------------------------------------------------------
 
