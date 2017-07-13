@@ -8,18 +8,18 @@ if(file_exists($file)){
 	exit("请勿重复安装，如需重新安装,请把/install/install.lock文件删除");
 }
 if(isset($_POST['data'])){
-	$conn = @mysql_connect($_POST['ip'],$_POST['user_name'],$_POST['pwd']);
+	$conn = @mysqli_connect($_POST['ip'],$_POST['user_name'],$_POST['pwd']);
 	if (!$conn){
-		die("连接数据库失败：" . mysql_error());
+		die("连接数据库失败：" . mysqli_error());
 	}
-	mysql_select_db($_POST['db'], $conn);
-	mysql_query("SET NAMES utf8");
-	mysql_query("set character_set_client=utf8"); 
-	mysql_query("set character_set_results=utf8");
+	mysqli_select_db($_POST['db'], $conn);
+	mysqli_query("SET NAMES utf8");
+	mysqli_query("set character_set_client=utf8"); 
+	mysqli_query("set character_set_results=utf8");
 	$sql=file_get_contents("sql.sql"); //把SQL语句以字符串读入$sql 
 	$a=explode("\r\n",$sql); //用explode()函数把$sql字符串以“;”分割为数组 
 	foreach($a as $b){ //遍历数组 
-		mysql_query($b); //执行SQL语句 
+		mysqli_query($b); //执行SQL语句 
 	}
 	 $cfg_dbhost=$ip=$_POST['ip'];
 	 $cfg_dbuser=$user_name=$_POST['user_name'];
@@ -47,14 +47,14 @@ $cfg_dbhost="'.$cfg_dbhost.'";
 $cfg_dbuser="'.$cfg_dbuser.'";
 $cfg_dbpwd="'.$cfg_dbpwd.'";
 $cfg_dbname="'.$cfg_dbname.'";
-$conn = @mysql_connect("'.$cfg_dbhost.'","'.$cfg_dbuser.'","'.$cfg_dbpwd.'");
+$conn = @mysqli_connect("'.$cfg_dbhost.'","'.$cfg_dbuser.'","'.$cfg_dbpwd.'");
 	if (!$conn){
-		die("连接数据库失败：" . mysql_error());
+		die("连接数据库失败：" . mysqli_error());
 	}
-	mysql_select_db( "'.$cfg_dbname.'", $conn);
-	mysql_query("SET NAMES utf8");
-	mysql_query("set character_set_client=utf8"); 
-	mysql_query("set character_set_results=utf8");
+	mysqli_select_db( "'.$cfg_dbname.'", $conn);
+	mysqli_query("SET NAMES utf8");
+	mysqli_query("set character_set_client=utf8"); 
+	mysqli_query("set character_set_results=utf8");
 ?>';
 	$wri=fopen("../config.php","w");
 	fwrite($wri,$file);
@@ -66,9 +66,9 @@ $conn = @mysql_connect("'.$cfg_dbhost.'","'.$cfg_dbuser.'","'.$cfg_dbpwd.'");
 	fwrite($wri,$file1);
 	fclose($wri);
 	echo '安装成功,有时间的话请把根目录下的install文件夹删除<br>
-		<a href=/admin.php>后台管理员登录</a>(账号admin密码123456)<br/>
+		<a href=/admin.php>后台管理员登录</a>(账号admin密码12345678)<br/>
 		为了安全性，后台管理和网站前台是独立的，所以后台的账号不能直接登录网站（即上面的账号不能登录网站，只能管理后台）<br/>
-		<a href=/index.php>进入首页</a>(有一个账号‘管理员’密码123456)';
+		<a href=/index.php>进入首页</a>(有一个账号‘管理员’密码12345678)';
 }else{
 	echo '请正确填写';
 }
