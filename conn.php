@@ -1,8 +1,8 @@
 <?php
-$cfg_dbhost="localhost";
-$cfg_dbuser="root";
-$cfg_dbpwd="xing233";
-$cfg_dbname="data";
+$cfg_dbhost="LOCAL";
+$cfg_dbuser="USERNAME";
+$cfg_dbpwd="PASSWORD";
+$cfg_dbname="DATANEME";
 $conn = @mysqli_connect($cfg_dbhost, $cfg_dbuser, $cfg_dbpwd);
 	if (!$conn){
 		die("连接数据库失败：" . mysqli_error());
